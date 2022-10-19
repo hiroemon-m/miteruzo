@@ -1,11 +1,11 @@
 # coding: utf-8
-from flask import Flask
+from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./templates/images')
 
 @app.route("/")
-def hello():
-    return "Hello, Flask!"
+def index():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run()
