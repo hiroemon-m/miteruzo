@@ -3,17 +3,18 @@ from flask import Flask, render_template, Response
 
 from camera import Camera
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./templates/images')
 
 
 @app.route("/")
 def index():
-    return "Hello World!"
+    return render_template("index.html")
 
 @app.route("/stream")
 def stream():
     return render_template("stream.html")
 
+# カメラからフレーム取得できる限り、画像を返す関数
 def gen(camera):
     while True:
         frame = camera.get_frame()
