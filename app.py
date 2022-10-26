@@ -1,5 +1,6 @@
 # coding: utf-8
 from flask import Flask, render_template
+from flask import request
 
 app = Flask(__name__, static_folder='./templates/images')
 
