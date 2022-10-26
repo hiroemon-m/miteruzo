@@ -1,0 +1,14 @@
+body{
+    background-color: lightyellow;
+}
+.main {
+height: 300px;
+}
+.left{
+width: 100%;
+height: 300px; 
+}
+.right{
+width: 100%;
+height: 200px;
+}

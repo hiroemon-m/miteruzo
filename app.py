@@ -24,7 +24,7 @@ def upload():
     elif request.method == 'POST':
         file = request.files['example']
         file.save(os.path.join('templates/images', file.filename))
-        return redirect(url_for('uploaded_file', filename=file.filename))
+        return render_template("stream.html", filename=os.path.join('images', file.filename), css_upload="upload_display.css")
 
 
 @app.route('/uploaded_file/<string:filename>')

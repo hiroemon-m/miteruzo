@@ -1,9 +1,17 @@
 <html>
   <head>
     <title>Flask Streaming Test</title>
+    <link rel="stylesheet" href="{{css_upload}}">
   </head>
   <body>
-    <h1>Flask Streaming Test</h1>
-    <img src="{{ url_for('video_feed') }}">
+    <div class="main">
+      <h1>Flask Streaming Test</h1>
+      <div class="left">
+        <img src="{{filename}}">
+      </div>
+      <div class="right">
+        <img src="{{ url_for('video_feed') }}">
+      </div>
+    </div>
   </body>
 </html>
