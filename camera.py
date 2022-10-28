@@ -16,9 +16,9 @@ class Camera(object):
     # カメラから撮ってきた画像をjpegにする
     def get_frame(self):
         success, image = self.video.read()
-        print("カメラから画像を読み込む")
-        print(image)
+        # print("カメラから画像を読み込む")
+        # print(success, image)
         ret, frame = cv2.imencode('.jpg', image)
-        print("画像をjpgにエンコード")
-        print(frame)
+        # print("画像をjpgにエンコード")
+        print(ret, frame)
         return frame
