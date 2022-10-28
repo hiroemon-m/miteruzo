@@ -6,12 +6,18 @@
   <body>
     <div class="main">
       <h1>Flask Streaming Test</h1>
-      <div class="left">
-        <img src="{{filename}}">
-      </div>
-      <div class="right">
-        <img src="{{ url_for('video_feed') }}">
-      </div>
+      <ul>
+        <li><img src="{{filename}}" height="500"></li>
+        <li><img src="{{ url_for('video_feed') }}" height="500"></li>
+      </ul>
     </div>
+    <style>
+      li {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+      }
+    </style>
   </body>
 </html>
