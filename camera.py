@@ -5,7 +5,7 @@ import cv2
 # カメラの設定に関するクラス
 class Camera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture(0)
+        self.video = cv2.VideoCapture(-1)
         print("インスタンス生成")
         print(self.video)
 
