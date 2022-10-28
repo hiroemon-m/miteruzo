@@ -18,6 +18,9 @@ def stream():
 def gen(camera):
     while True:
         frame = camera.get_frame()
+        print("カメラインスタンスからフレームを取得")
+        print(frame)
+
 
         if frame is not None:
             yield (b"--frame\r\n"
