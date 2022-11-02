@@ -1,9 +1,37 @@
 <html>
   <head>
     <title>Flask Streaming Test</title>
+    <link rel="stylesheet" href="{{css_upload}}">
   </head>
   <body>
-    <h1>Flask Streaming Test</h1>
-    <img src="{{ url_for('video_feed') }}">
+    <div class="main">
+      <h1>綺麗な状態 vs 現状の状態</h1>
+      <ul>
+        <li><img src="{{filename}}" height="400"></li>
+        <li><img src="{{ url_for('video_feed') }}" height="400"></li>
+      </ul>
+      <form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="example">
+        <input type="submit" value="アップロード">
+      </form>
+    </div>
+    <style>
+      li {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+      }
+      .main {
+        margin: 0;
+        background: yellow;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) 
+      }
+    </style>
+    
   </body>
 </html>

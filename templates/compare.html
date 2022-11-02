@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>アップロード完了</title>
+</head>
+<body>
+    <h1>ファイルアップロード完了</h1>
+    <h2>{{filename}}</h2>
+</body>
+</html>
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <tbody>
+    {% for row in calendar_list %}
+    <tr>
+    <td><a href="/calendar/?y={{ row[0] }}">{{ row[0] }}年</a></td>
+    <td><a href="/calendar/?y={{ row[1] }}&p=r">{{ row[1] }}</a></td>
+    <td><a href="/calendar/?y={{ row[2] }}&p=h">{{ row[2] }}</a></td>
+    <td><a href="/calendar/?y={{ row[3] }}&p=s">{{ row[3] }}</a></td>
+    <td><a href="/calendar/?y={{ row[4] }}&p=t">{{ row[4] }}</a></td>
+    <td><a href="/calendar/?y={{ row[5] }}&p=m">{{ row[5] }}</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
