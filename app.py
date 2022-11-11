@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 from flask import Flask, render_template, Response, request, url_for, redirect
 
 from camera import Camera
@@ -32,6 +33,16 @@ def upload():
 @app.route('/uploaded_file/<string:filename>')
 def uploaded_file(filename):
     return render_template('uploaded_file.html', filename=filename)
+
+@app.route('/save_img')
+def save_img():
+    print("aaa")
+    camera = Camera()
+    frame = camera.get_frame()
+    a = np.frombuffer(frame, np.uint8)
+    img = cv2.imdecode(a,  flags=cv2.IMREAD_COLOR)
+    cv2.imwrite('./templates/images/test2.jpg', img)
+    return render_template("stream.html", filename='images/test2.jpg')
 
 # カメラからフレーム取得できる限り、画像を返す関数
 def gen(camera):
